@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --color-primary: #2D3748; /* gray-700 - Sophisticated authority for headlines and navigation */
+    --color-primary-50: #F7FAFC; /* gray-50 */
+    --color-primary-100: #EDF2F7; /* gray-100 */
+    --color-primary-200: #E2E8F0; /* gray-200 */
+    --color-primary-300: #CBD5E0; /* gray-300 */
+    --color-primary-400: #A0AEC0; /* gray-400 */
+    --color-primary-500: #718096; /* gray-500 */
+    --color-primary-600: #4A5568; /* gray-600 */
+    --color-primary-700: #2D3748; /* gray-700 */
+    --color-primary-800: #1A202C; /* gray-800 */
+    --color-primary-900: #171923; /* gray-900 */
+    --color-primary-foreground: #FFFFFF; /* white */
+
+    /* Secondary Colors */
+    --color-secondary: #4A5568; /* gray-600 - Supporting text that maintains readability hierarchy */
+    --color-secondary-50: #F7FAFC; /* gray-50 */
+    --color-secondary-100: #EDF2F7; /* gray-100 */
+    --color-secondary-200: #E2E8F0; /* gray-200 */
+    --color-secondary-300: #CBD5E0; /* gray-300 */
+    --color-secondary-400: #A0AEC0; /* gray-400 */
+    --color-secondary-500: #718096; /* gray-500 */
+    --color-secondary-600: #4A5568; /* gray-600 */
+    --color-secondary-700: #2D3748; /* gray-700 */
+    --color-secondary-800: #1A202C; /* gray-800 */
+    --color-secondary-900: #171923; /* gray-900 */
+    --color-secondary-foreground: #FFFFFF; /* white */
+
+    /* Accent Colors */
+    --color-accent: #38A169; /* green-600 - Trust-building green for confirmations and sustainability */
+    --color-accent-50: #F0FFF4; /* green-50 */
+    --color-accent-100: #C6F6D5; /* green-100 */
+    --color-accent-200: #9AE6B4; /* green-200 */
+    --color-accent-300: #68D391; /* green-300 */
+    --color-accent-400: #48BB78; /* green-400 */
+    --color-accent-500: #38A169; /* green-500 */
+    --color-accent-600: #2F855A; /* green-600 */
+    --color-accent-700: #276749; /* green-700 */
+    --color-accent-800: #22543D; /* green-800 */
+    --color-accent-900: #1C4532; /* green-900 */
+    --color-accent-foreground: #FFFFFF; /* white */
+
+    /* Background Colors */
+    --color-background: #FAFAFA; /* gray-50 - Warm white canvas that enhances product photography */
+    --color-background-secondary: #F7FAFC; /* gray-50 */
+
+    /* Surface Colors */
+    --color-surface: #FFFFFF; /* white - Pure white for product cards and content areas */
+    --color-surface-secondary: #F7FAFC; /* gray-50 */
+
+    /* Text Colors */
+    --color-text-primary: #1A202C; /* gray-800 - High contrast for extended reading comfort */
+    --color-text-secondary: #718096; /* gray-500 - Clear hierarchy for supporting information */
+    --color-text-muted: #A0AEC0; /* gray-400 */
+
+    /* Status Colors */
+    --color-success: #48BB78; /* green-400 - Positive reinforcement without overwhelming celebration */
+    --color-success-50: #F0FFF4; /* green-50 */
+    --color-success-100: #C6F6D5; /* green-100 */
+    --color-success-200: #9AE6B4; /* green-200 */
+    --color-success-300: #68D391; /* green-300 */
+    --color-success-400: #48BB78; /* green-400 */
+    --color-success-500: #38A169; /* green-500 */
+    --color-success-600: #2F855A; /* green-600 */
+    --color-success-700: #276749; /* green-700 */
+    --color-success-800: #22543D; /* green-800 */
+    --color-success-900: #1C4532; /* green-900 */
+    --color-success-foreground: #FFFFFF; /* white */
+
+    --color-warning: #ED8936; /* orange-400 - Gentle urgency for inventory or time-sensitive information */
+    --color-warning-50: #FFFAF0; /* orange-50 */
+    --color-warning-100: #FEEBC8; /* orange-100 */
+    --color-warning-200: #FBD38D; /* orange-200 */
+    --color-warning-300: #F6AD55; /* orange-300 */
+    --color-warning-400: #ED8936; /* orange-400 */
+    --color-warning-500: #DD6B20; /* orange-500 */
+    --color-warning-600: #C05621; /* orange-600 */
+    --color-warning-700: #9C4221; /* orange-700 */
+    --color-warning-800: #7B341E; /* orange-800 */
+    --color-warning-900: #652B19; /* orange-900 */
+    --color-warning-foreground: #FFFFFF; /* white */
+
+    --color-error: #E53E3E; /* red-500 - Clear problem indication with helpful tone */
+    --color-error-50: #FED7D7; /* red-100 */
+    --color-error-100: #FEB2B2; /* red-200 */
+    --color-error-200: #FC8181; /* red-300 */
+    --color-error-300: #F56565; /* red-400 */
+    --color-error-400: #E53E3E; /* red-500 */
+    --color-error-500: #C53030; /* red-600 */
+    --color-error-600: #9B2C2C; /* red-700 */
+    --color-error-700: #822727; /* red-800 */
+    --color-error-800: #63171B; /* red-900 */
+    --color-error-900: #63171B; /* red-900 */
+    --color-error-foreground: #FFFFFF; /* white */
+
+    /* Brand Colors */
+    --color-brand-primary: #2d5a27; /* Deep forest green expressing growth, confidence, and sustainable values */
+    --color-brand-secondary: #8b4513; /* Warm cognac brown evoking craftsmanship, timeless quality */
+    --color-conversion-accent: #d97706; /* Energetic amber creating urgency and action without aggression */
+    --color-trust-builder: #1e40af; /* Deep navy blue establishing credibility and security */
+
+    /* Border Colors */
+    --color-border: #E2E8F0; /* gray-200 */
+    --color-border-secondary: #CBD5E0; /* gray-300 */
+
+    /* Shadow Colors */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-text-primary font-sans;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-primary font-medium;
+  }
+
+  .font-accent {
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-accent text-accent-foreground hover:bg-accent/90 focus:ring-2 focus:ring-accent focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/90 focus:ring-2 focus:ring-secondary focus:ring-offset-2;
+  }
+
+  .card {
+    @apply bg-surface border border-border rounded-lg shadow-md;
+  }
+
+  .input-field {
+    @apply w-full px-3 py-2 border border-border rounded-md bg-surface text-text-primary placeholder-text-secondary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand-primary to-accent bg-clip-text text-transparent;
+  }
+
+  .editorial-spacing {
+    @apply space-y-6 lg:space-y-8;
+  }
+
+  .product-card {
+    @apply bg-surface rounded-lg overflow-hidden transition-all duration-300 ease-out hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .cta-button {
+    @apply inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-lg transition-all duration-300 ease-out transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .hero-text {
+    @apply text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight tracking-tight;
+  }
+
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .smooth-transition {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .backdrop-blur-glass {
+    @apply backdrop-filter backdrop-blur-lg bg-white/85;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+
+  .aspect-square {
+    aspect-ratio: 1 / 1;
+  }
+
+  .aspect-portrait {
+    aspect-ratio: 3 / 4;
+  }
+
+  .aspect-landscape {
+    aspect-ratio: 4 / 3;
+  }
+
+  .grid-masonry {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(16px, 3vw, 32px);
+  }
+
+  .fluid-spacing {
+    padding: clamp(16px, 4vw, 64px);
+  }
+
+  .text-fluid-sm {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+  }
+
+  .text-fluid-base {
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
+  }
+
+  .text-fluid-lg {
+    font-size: clamp(1.125rem, 3vw, 1.25rem);
+  }
+
+  .text-fluid-xl {
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
+  }
+
+  .text-fluid-2xl {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+
+  .text-fluid-3xl {
+    font-size: clamp(1.875rem, 6vw, 2.5rem);
+  }
+
+  .text-fluid-4xl {
+    font-size: clamp(2.25rem, 7vw, 3rem);
+  }
+}
